@@ -1,0 +1,9 @@
+#!/bin/bash
+
+groupadd selenium
+
+useradd -g selenium -d /usr/local/lib/selenium -s /bin/sh selenium --create-home
+
+wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar -O /usr/local/lib/selenium/selenium-server.jar
+
+chown selenium:selenium /usr/local/lib/selenium/selenium-server.jar
