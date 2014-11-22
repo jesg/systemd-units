@@ -5,7 +5,7 @@ These are a collection of systemd units that run docker containers as a service.
 
 Install
 =======
-Copy the units to /etc/systemd/system/, then execute
+Copy the units to /etc/systemd/system/ then execute
 ```
 systemctl daemon-reload
 ```
