@@ -1,0 +1,12 @@
+[Unit]
+Description=Selenium Hub
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=selenium
+
+ExecStart=/usr/bin/java -jar /usr/local/lib/selenium/selenium-server.jar -role hub
+
+[Install]
+WantedBy=multi-user.target
