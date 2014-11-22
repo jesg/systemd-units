@@ -1,0 +1,14 @@
+[Unit]
+Description=Selenium Standalone Server
+Requires=vncserver@:44.service
+After=vncserver@:44.service
+
+[Service]
+Type=simple
+User=selenium
+
+Environment=DISPLAY=:44
+ExecStart=/usr/bin/java -jar /usr/local/lib/selenium/selenium-server.jar
+
+[Install]
+WantedBy=multi-user.target
