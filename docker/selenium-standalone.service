@@ -8,7 +8,7 @@ TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker kill selenium-standalone
 ExecStartPre=-/usr/bin/docker rm selenium-standalone
 ExecStartPre=-/usr/bin/docker pull jesg/selenium:standalone
-ExecStart=/usr/bin/docker run -p 4444:4444 -p 5910:5910 --name selenium-standalone -t jesg/selenium:standalone
+ExecStart=/usr/bin/docker run -p 127.0.0.1:4444:4444 -p 127.0.0.1:5910:5910 --name selenium-standalone -t jesg/selenium:standalone
 ExecStop=/usr/bin/docker stop selenium-standalone
 
 [Install]
