@@ -36,7 +36,7 @@ If you have issues with twm replace it with openbox.
 Run Selenium Grid
 =================
 ```
-systemctl start 'selenium.*'
+systemctl start 'selenium.grid*'
 ```
 
 Systemd units can be started by a pattern.
@@ -49,9 +49,9 @@ journalctl -f -u vncserver@\:44  # view the vncserver's log
 
 journalctl -f -u selenium        # view standalone selenium server log
 
-journalctl -f -u selenium.hub
+journalctl -f -u selenium.grid.hub
 
-journalctl -f -u selenium.node
+journalctl -f -u selenium.grid.node
 
-journalctl -f -u 'selenium*'     # view all selenium logs
+journalctl -f -u 'selenium.grid*'     # view all selenium logs
 ```
