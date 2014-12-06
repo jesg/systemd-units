@@ -1,0 +1,11 @@
+[Unit]
+Description=Phantomjs Daemon
+After=syslog.target network.target
+
+[Service]
+User=nobody
+Environment=SLNM_GRID_HUB='http://127.0.0.1:4444'
+ExecStart=/usr/bin/phantomjs --webdriver=%i --webdriver-selenium-grid-hub=$SLNM_GRID_HUB
+
+[Install]
+WantedBy=multi-user.target
