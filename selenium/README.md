@@ -36,8 +36,8 @@ If you have issues with twm replace it with openbox.
 Run Selenium Grid
 =================
 ```
-systemctl start selenium-hub
-systemctl start selenium-node
+systemctl start selenium.hub
+systemctl start selenium.node
 ```
 Note that order does not matter.
 
@@ -49,7 +49,9 @@ journalctl -f -u vncserver@\:44  # view the vncserver's log
 
 journalctl -f -u selenium        # view standalone selenium server log
 
-journalctl -f -u selenium-hub
+journalctl -f -u selenium.hub
 
-journalctl -f -u selenium-node
+journalctl -f -u selenium.node
+
+journalctl -f -u 'selenium*'     # view all selenium logs
 ```
