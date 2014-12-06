@@ -36,10 +36,10 @@ If you have issues with twm replace it with openbox.
 Run Selenium Grid
 =================
 ```
-systemctl start selenium.hub
-systemctl start selenium.node
+systemctl start 'selenium.*'
 ```
-Note that order does not matter.
+
+Systemd units can be started by a pattern.
 
 View Logs
 =========
