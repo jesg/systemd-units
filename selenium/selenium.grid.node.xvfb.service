@@ -1,0 +1,11 @@
+[Unit]
+Description=Selenium Grid Node on xvfb
+After=syslog.target network.target
+
+[Service]
+User=selenium
+
+ExecStart=/usr/bin/xvfb-run -a /usr/bin/java -jar /usr/local/lib/selenium/selenium-server.jar -role node
+
+[Install]
+WantedBy=default.target
