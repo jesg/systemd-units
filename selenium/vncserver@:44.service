@@ -3,13 +3,14 @@ Description=Remote desktop service (VNC)
 After=syslog.target network.target
 
 [Service]
-Type=simple
+Type=forking
 User=selenium
 PAMName=login
+PIDFile=/usr/local/lib/selenium/.vnc/%H%i.pid
 
 # Clean any existing files in /tmp/.X11-unix environment
 ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || :'
-ExecStart=/usr/bin/vncserver %i -fg -localhost
+ExecStart=/usr/bin/vncserver %i -localhost
 ExecStop=/usr/bin/vncserver -kill %i
 
 [Install]
